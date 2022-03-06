@@ -23,42 +23,19 @@ public class Main {
 
         while (n --> 0) {
             deque = new ArrayDeque<>();
-            String command = br.readLine();
-            String[] commands;
+
+            // 명령어 입력
+            String in_cmd = br.readLine();
+            String[] cmd = in_cmd.split("");
+
+            // 전체 배열 수 입력
             int total = Integer.parseInt(br.readLine());
-            String temp = br.readLine();
-            Iterator<Integer> iterator = deque.iterator();
 
-            // 분할
-            commands = command.split("");
-            for (int i = 0; i < temp.length(); i++) {
-                if (i == 0 || i == temp.length() - 1 || i % 2 == 0) { continue; }
-                deque.offerLast(Integer.parseInt(String.valueOf(temp.charAt(i))));
-            }
+            // 배열 정수 입력
+//            String in_arr = br.readLine().replace("[", "").replace("]", "");
+            System.out.println(total);
 
-            // 연산 출력 부분
-            if (deque.size() > total || total == 0 || deque.isEmpty()) { sb.append("error\n"); continue; }
-
-            for (int i = 0; i < commands.length; i++) {
-                switch (commands[i]) {
-                    case "R":
-                        if (iterator == deque.iterator()) { iterator = deque.descendingIterator(); }
-                        else { iterator = deque.iterator(); }
-                        break;
-
-                    case "D":
-                        deque.poll();
-                }
-            }
-
-            sb.append("[");
-            for (int i = 0; i < deque.size(); i++) {
-                sb.append(iterator.next());
-                if (i != deque.size() - 1) { sb.append(","); }
-                else { sb.append("]\n"); }
-            }
         }
-
         System.out.print(sb);
     }
 }
