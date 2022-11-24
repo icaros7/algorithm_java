@@ -64,16 +64,16 @@ public class Main {
         sb.append("회의 정렬 결과 =\n");
         for (int i = 0; i < n; i++) {
             Meeting cur = meetings[i];
-            sb.append(cur).append("\n");
+            sb.append(meetings[i]).append("\n");
 
             if (i == 0) {
-                before = cur._eTime;
-                selMeetings.add(cur);
+                before = meetings[i]._eTime;
+                selMeetings.add(meetings[i]);
             }
             else {
-                if (before <= cur._sTime) {
-                    selMeetings.add(cur);
-                    before = cur._eTime;
+                if (before <= meetings[i]._sTime) {
+                    before = meetings[i]._eTime;
+                    selMeetings.add(meetings[i]);
                 }
             }
         }
