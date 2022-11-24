@@ -18,8 +18,13 @@ public class Main {
      * Meeting 정보를 갖는 Class
      */
     private static class Meeting {
-        int _sTime, _eTime;
+        int _sTime, _eTime;     // 회의 시작 시간, 종료 시간
 
+        /**
+         * Meetings Class 생성자
+         * @param sTime 회의 시작 시간
+         * @param eTime 회의 종료 시간
+         */
         public Meeting(int sTime, int eTime) {
             this._sTime = sTime;
             this._eTime = eTime;
