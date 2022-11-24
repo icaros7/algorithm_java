@@ -63,7 +63,6 @@ public class Main {
         // 회의 정렬 이후 출력 및 최적의 시간으로 배정
         sb.append("회의 정렬 결과 =\n");
         for (int i = 0; i < n; i++) {
-            Meeting cur = meetings[i];
             sb.append(meetings[i]).append("\n");
 
             if (i == 0) {
